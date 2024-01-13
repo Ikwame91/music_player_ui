@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:music_player_ui/pages/homepage.dart';
-import 'package:music_player_ui/themes/dark_mode.dart';
+import 'package:music_player_ui/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: darkMode,
+      theme: Provider.of<ThemeProvider>(context).themeData,
       home: const Homepage(),
     );
   }
