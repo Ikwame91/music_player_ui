@@ -10,11 +10,13 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
           'S E T T I N G S',
           style: GoogleFonts.poppins(
-            color: Colors.black26,
+            color: Theme.of(context).colorScheme.inversePrimary,
             fontWeight: FontWeight.bold,
             fontSize: 25,
           ),
@@ -40,11 +42,17 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
             CupertinoSwitch(
-                value: Provider.of<ThemeProvider>(context, listen: false)
-                    .isDarkMode,
-                onChanged: (value) =>
-                    Provider.of<ThemeProvider>(context, listen: false)
-                        .toggleTheme())
+              trackColor: Colors.red,
+
+              value:
+                  Provider.of<ThemeProvider>(context, listen: false).isDarkMode,
+              onChanged: (value) =>
+                  Provider.of<ThemeProvider>(context, listen: false)
+                      .toggleTheme(),
+
+              //listen: true - Widget rebuilds when the state changes.
+              // listen: false - Widget does not rebuild when the state changes.
+            )
           ],
         ),
       ),

@@ -25,7 +25,13 @@ class MyDrawer extends StatelessWidget {
             child: ListTile(
               leading: Icon(Icons.home,
                   color: Theme.of(context).colorScheme.inversePrimary),
-              title: const Text('H O M E'),
+              title: Text(
+                'H O M E',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -36,7 +42,13 @@ class MyDrawer extends StatelessWidget {
             child: ListTile(
               leading: Icon(Icons.settings,
                   color: Theme.of(context).colorScheme.inversePrimary),
-              title: const Text('S E T T I N G S'),
+              title: Text(
+                'S E T T I N G S',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.inversePrimary,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.push(
