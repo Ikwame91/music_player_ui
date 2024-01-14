@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:music_player_ui/pages/settingspage.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -25,16 +26,24 @@ class MyDrawer extends StatelessWidget {
               leading: Icon(Icons.home,
                   color: Theme.of(context).colorScheme.inversePrimary),
               title: const Text('H O M E'),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20, top: 25),
             child: ListTile(
-              leading: Icon(Icons.home,
+              leading: Icon(Icons.settings,
                   color: Theme.of(context).colorScheme.inversePrimary),
-              title: const Text('H O M E'),
-              onTap: () {},
+              title: const Text('S E T T I N G S'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SettingsPage()));
+              },
             ),
           ),
         ],

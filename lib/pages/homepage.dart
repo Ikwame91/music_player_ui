@@ -18,13 +18,13 @@ class _HomepageState extends State<Homepage> {
         appBar: AppBar(
           title: Text(
             'P L A Y L I S T ',
-            style: GoogleFonts.bebasNeue(
+            style: GoogleFonts.poppins(
               textStyle: TextStyle(
                 color: Theme.of(context).colorScheme.primary,
-                fontSize: 25,
+                fontSize: 27,
                 fontWeight: FontWeight.bold,
               ),
-              letterSpacing: 2,
+              letterSpacing: 1,
             ),
           ),
           centerTitle: true,
