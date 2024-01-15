@@ -98,8 +98,8 @@ class SongPage extends StatelessWidget {
                     ),
                     Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 25),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 25),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -127,11 +127,46 @@ class SongPage extends StatelessWidget {
                             min: 0,
                             max: 100,
                             value: 50,
-                            activeColor:
-                                Theme.of(context).colorScheme.secondary,
+                            activeColor: Colors.green,
                             onChanged: (value) {},
                           ),
                         )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: const NeuBox(
+                              child: Icon(Icons.skip_previous),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Expanded(
+                            flex: 2,
+                            child: GestureDetector(
+                              onTap: () {},
+                              child: const NeuBox(
+                                child: Icon(Icons.play_arrow),
+                              ),
+                            )),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Expanded(
+                            child: GestureDetector(
+                          onTap: () {},
+                          child: const NeuBox(
+                            child: Icon(Icons.skip_next),
+                          ),
+                        ))
                       ],
                     )
                   ],
