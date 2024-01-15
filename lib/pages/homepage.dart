@@ -91,12 +91,12 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                   ),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.play_arrow),
-                    onPressed: () {
-                      //play the song
-                    },
-                  ),
+                  // trailing: IconButton(
+                  //   icon: const Icon(Icons.play_arrow),
+                  //   onPressed: () {
+                  //     //play the song
+                  //   },
+                  // ),
                 );
               }));
         })),

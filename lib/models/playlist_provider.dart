@@ -26,6 +26,24 @@ class PlayListProvider extends ChangeNotifier {
       albumImagePath: 'assets/secondImage.jpg',
       audioPath: 'assets/icon2.jpg',
     ),
+    Song(
+      songName: 'Juice Lintolp',
+      artistName: 'Rising Star',
+      albumImagePath: 'assets/fourthImage.jpg',
+      audioPath: 'assets/icon2.jpg',
+    ),
+    Song(
+      songName: 'Taliban Reenolt',
+      artistName: 'J Nevas',
+      albumImagePath: 'assets/fifthImage.jpg',
+      audioPath: 'assets/icon2.jpg',
+    ),
+    Song(
+      songName: 'Envy Latite',
+      artistName: 'Nkay',
+      albumImagePath: 'assets/blob.jpeg',
+      audioPath: 'assets/icon2.jpg',
+    ),
   ];
 
 // current song playing index
