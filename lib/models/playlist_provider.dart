@@ -9,7 +9,7 @@ class PlayListProvider extends ChangeNotifier {
       songName: 'Astronaut In The Ocean',
       artistName: 'Masked Wolf',
       albumImagePath: 'assets/firstImage.jpg',
-      audioPath: 'assets/icon2.jpg',
+      audioPath: 'audio/song.mp3',
     ),
 
     //song 2
@@ -17,7 +17,7 @@ class PlayListProvider extends ChangeNotifier {
       songName: 'Taliban Reenolt',
       artistName: 'J Nevas',
       albumImagePath: 'assets/thirdImage.jpg',
-      audioPath: 'assets/icon2.jpg',
+      audioPath: 'audio/song.mp3',
     ),
 
     //song3
@@ -25,25 +25,25 @@ class PlayListProvider extends ChangeNotifier {
       songName: 'Greed With Envy',
       artistName: 'Wayne Dapolt',
       albumImagePath: 'assets/secondImage.jpg',
-      audioPath: 'assets/icon2.jpg',
+      audioPath: 'audio/song.mp3',
     ),
     Song(
       songName: 'Juice Lintolp',
       artistName: 'Rising Star',
       albumImagePath: 'assets/fourthImage.jpg',
-      audioPath: 'assets/icon2.jpg',
+      audioPath: 'audio/song.mp3',
     ),
     Song(
       songName: 'Taliban Reenolt',
       artistName: 'J Nevas',
       albumImagePath: 'assets/fifthImage.jpg',
-      audioPath: 'assets/icon2.jpg',
+      audioPath: 'audio/song.mp3',
     ),
     Song(
       songName: 'Envy Latite',
       artistName: 'Nkay',
       albumImagePath: 'assets/blob.jpeg',
-      audioPath: 'assets/icon2.jpg',
+      audioPath: 'audio/song.mp3',
     ),
   ];
 
@@ -52,30 +52,6 @@ class PlayListProvider extends ChangeNotifier {
 
 /*getters*/
 
-/*
-getters
-
-
-
-durations
-
-constructor
-
-initially not playing
-
-play the song
-
-pause current song
-
-pause or resume
-
-play previous song
-
-dispose audio player
-
-//
-
-*/
   final AudioPlayer _audioPlayer = AudioPlayer();
 
 //durations
@@ -140,6 +116,7 @@ dispose audio player
   void playPreviousSong() async {
     //if more than 2 seconds passed restart the song
     if (_currentDuration.inSeconds > 2) {
+      seek(Duration.zero);
     }
     //if its within the first 2 sevconds
     else {
