@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player_ui/components/nuephormism_box.dart';
+import 'package:music_player_ui/models/playlist_provider.dart';
 import 'package:provider/provider.dart';
 
 class SongPage extends StatelessWidget {
@@ -8,14 +9,22 @@ class SongPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer(
+    return Consumer<PlayListProvider>(
       builder: (context, value, child) {
+        //get playlist
+        final playlist = value.playList;
+
+        //get current song index
+        final currentSong = playlist[value.currentSongIndex ?? 0];
+
+        //return scaffold ui
         return SafeArea(
           child: Scaffold(
               backgroundColor: Theme.of(context).colorScheme.primary,
               body: Padding(
                 padding: const EdgeInsets.only(left: 15, right: 15, top: 20),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,7 +58,7 @@ class SongPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(14),
                         child: Column(
                           children: [
-                            Image.asset('assets/blob.jpeg'),
+                            Image.asset(currentSong.albumImagePath),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -59,7 +68,7 @@ class SongPage extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text('So Sick',
+                                      Text(currentSong.songName,
                                           style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                               color: Theme.of(context)
@@ -69,9 +78,9 @@ class SongPage extends StatelessWidget {
                                               fontWeight: FontWeight.bold,
                                             ),
                                           )),
-                                      const Text(
-                                        ' Nkay',
-                                        style: TextStyle(
+                                      Text(
+                                        currentSong.artistName,
+                                        style: const TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold,
                                         ),
