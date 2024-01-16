@@ -62,7 +62,7 @@ class PlayListProvider extends ChangeNotifier {
   bool _isPlaying = false;
 
   //play the song
-  Future<void> play() async {
+  void play() async {
     final String path = _playList[currentSongIndex!].audioPath;
     await _audioPlayer.stop();
     await _audioPlayer.play(AssetSource(path));
@@ -80,7 +80,7 @@ class PlayListProvider extends ChangeNotifier {
   //resume playing
   void resume() async {
     await _audioPlayer.resume();
-    _isPlaying = false;
+    _isPlaying = true;
     notifyListeners();
   }
 

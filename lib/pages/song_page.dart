@@ -13,7 +13,7 @@ class SongPage extends StatelessWidget {
         duration.inSeconds.remainder(60).toString().padLeft(2, '0');
     String formattedTime = "${duration.inMinutes}: $twoDigitsSeconds";
 
-    return formatTime(duration);
+    return formattedTime;
   }
 
   @override
@@ -122,14 +122,18 @@ class SongPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(formatTime(value.currentDuration),
-                                  style: const TextStyle(
-                                    color: Colors.grey,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        Theme.of(context).colorScheme.tertiary,
                                   )),
                               const Icon(Icons.shuffle),
                               const Icon(Icons.repeat),
                               Text(formatTime(value.totalDuration),
-                                  style: const TextStyle(
-                                    color: Colors.grey,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color:
+                                        Theme.of(context).colorScheme.tertiary,
                                   )),
                             ],
                           ),
