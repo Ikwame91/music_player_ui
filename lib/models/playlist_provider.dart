@@ -25,25 +25,25 @@ class PlayListProvider extends ChangeNotifier {
       songName: 'Greed With Envy',
       artistName: 'Wayne Dapolt',
       albumImagePath: 'assets/secondImage.jpg',
-      audioPath: 'audio/song.mp3',
+      audioPath: 'audio/song5.mp3',
     ),
     Song(
       songName: 'Juice Lintolp',
       artistName: 'Rising Star',
       albumImagePath: 'assets/fourthImage.jpg',
-      audioPath: 'audio/song.mp3',
+      audioPath: 'audio/song4.mp3',
     ),
     Song(
       songName: 'Taliban Reenolt',
       artistName: 'J Nevas',
       albumImagePath: 'assets/fifthImage.jpg',
-      audioPath: 'audio/song.mp3',
+      audioPath: 'audio/song2.mp3',
     ),
     Song(
       songName: 'Envy Latite',
       artistName: 'Nkay',
       albumImagePath: 'assets/blob.jpeg',
-      audioPath: 'audio/song.mp3',
+      audioPath: 'audio/song1.mp3',
     ),
   ];
 
