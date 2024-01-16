@@ -94,6 +94,33 @@ class PlayListProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  double _volume = 1.0;
+
+  double get volume => _volume;
+
+  void setVolume(double volume) {
+    _volume = volume;
+    _audioPlayer.setVolume(volume);
+    notifyListeners();
+  }
+
+  // Shuffling and Repeating
+  bool _isShuffling = false;
+  bool _isRepeating = false;
+
+  bool get isShuffling => _isShuffling;
+  bool get isRepeating => _isRepeating;
+
+  void toggleShuffle() {
+    _isShuffling = !_isShuffling;
+    notifyListeners();
+  }
+
+  void toggleRepeat() {
+    _isRepeating = !_isRepeating;
+    notifyListeners();
+  }
+
 //seek to a specific position in the current song
   void seek(Duration position) async {
     await _audioPlayer.seek(position);
@@ -174,3 +201,109 @@ class PlayListProvider extends ChangeNotifier {
     notifyListeners();
   }
 }
+// In PlayListProvider class
+// double _volume = 1.0;
+
+// void setVolume(double volume) {
+//   _volume = volume;
+//   _audioPlayer.setVolume(volume);
+//   notifyListeners();
+// }
+
+// // In SongPage Widget
+// Slider(
+//   value: value.volume,
+//   onChanged: (double value) {
+//     value.setVolume(value);
+//   },
+// )
+
+
+// In PlayListProvider class
+// bool _isShuffling = false;
+// bool _isRepeating = false;
+
+// Add getters and setters for shuffling and repeating
+
+// void toggleShuffle() {
+//   _isShuffling = !_isShuffling;
+//   notifyListeners();
+// }
+
+// void toggleRepeat() {
+//   _isRepeating = !_isRepeating;
+//   notifyListeners();
+// }
+
+// // In SongPage Widget
+// IconButton(
+//   onPressed: () {
+//     value.toggleShuffle();
+//   },
+//   icon: Icon(
+//     Icons.shuffle,
+//     color: value.isShuffling ? Colors.green : Colors.grey,
+//   ),
+// )
+
+// IconButton(
+//   onPressed: () {
+//     value.toggleRepeat();
+//   },
+//   icon: Icon(
+//     Icons.repeat,
+//     color: value.isRepeating ? Colors.green : Colors.grey,
+//   ),
+// )
+
+
+
+/*
+class PlayListProvider extends ChangeNotifier {
+  // ... existing code
+
+  // Shuffling and Repeating
+  bool _isShuffling = false;
+  bool _isRepeating = false;
+
+  bool get isShuffling => _isShuffling;
+  bool get isRepeating => _isRepeating;
+
+  void toggleShuffle() {
+    _isShuffling = !_isShuffling;
+    notifyListeners();
+  }
+
+  void toggleRepeat() {
+    _isRepeating = !_isRepeating;
+    notifyListeners();
+  }
+
+  // ... existing code
+}
+
+
+
+// In SongPage Widget
+IconButton(
+  onPressed: () {
+    value.toggleShuffle();
+  },
+  icon: Icon(
+    Icons.shuffle,
+    color: value.isShuffling ? Colors.green : Colors.grey,
+  ),
+)
+
+IconButton(
+  onPressed: () {
+    value.toggleRepeat();
+  },
+  icon: Icon(
+    Icons.repeat,
+    color: value.isRepeating ? Colors.green : Colors.grey,
+  ),
+)
+
+
+*/
