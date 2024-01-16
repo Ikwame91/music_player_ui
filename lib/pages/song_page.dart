@@ -242,10 +242,11 @@ class SongPage extends StatelessWidget {
                                   // Color of the inactive track
                                   Colors.grey,
                               thumbColor: Colors.red,
+
                               overlayColor: Colors.red.withOpacity(
                                   // Color of the overlay (when sliding)
                                   0.3),
-                              trackHeight: 15,
+                              trackHeight: 4,
                               thumbShape: const RoundSliderThumbShape(
                                   enabledThumbRadius: 14),
                               overlayShape: const RoundSliderOverlayShape(
